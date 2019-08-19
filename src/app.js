@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const weather = require('./services/weather');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 // Setup handlebars engine and views location
 app.set('view engine', 'hbs')
@@ -65,6 +66,6 @@ app.get('/*', (req, res) => {
 //   res.send('<h1>Weather</h1>')
 // })
 
-app.listen(3000, () => {
-  console.log('Server started on port 3000')
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`)
 });
